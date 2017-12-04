@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration[5.1]
       t.string :author
       t.text :description
       t.integer :isbn, :limit => 8
-      t.date :publishdate
+      t.string :publishdate
 
       t.timestamps
     end

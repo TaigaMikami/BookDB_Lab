@@ -1,7 +1,11 @@
 <% provide(:title, @book.title) %>
 <h1>
-  <%= @book.title %>
+  <img src="<%= @book.image_name %>" />
 </h1>
+<h1>  <%= @book.title %></h1>
 
-<p><%= @book.author %></p>
-<img src="<%= @book.image_name %>" />
+<div class="contents">
+  <p><%= @book.author %></p>
+  <p><%= @book.description %></p>
+  <p><%= @book.publishdate %></p>
+</div>

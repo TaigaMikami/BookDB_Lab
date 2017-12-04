@@ -5,7 +5,7 @@
   <ul class="books">
     <% @books.each do |book| %>
       <li>
-        <a href="/books/<%= book.id %>"><img src="<%= book.image_name %>" /></a>
+        <a href="/books/<%= book.id %>"><img src="<%= book.image_name %>" onerror="/noimage.png"/></a>
         <p><%= link_to book.title, book %></p>
       </li>
     <% end %>

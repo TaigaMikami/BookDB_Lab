@@ -82,5 +82,15 @@ input {
 .books{
   li{
     list-style: none;
+    padding-top: 10px;
   }
+  p{
+    color: white;
+  }
+}
+
+
+/* show */
+.contents{
+  text-align: center;
 }
