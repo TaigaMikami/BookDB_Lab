@@ -1,0 +1,13 @@
+<% provide(:title, '書籍一覧') %>
+
+<h1>All Books</h1>
+<div class="tana">
+  <ul class="books">
+    <% @books.each do |book| %>
+      <li>
+        <a href="/books/<%= book.id %>"><img src="<%= book.image_name %>" /></a>
+        <p><%= link_to book.title, book %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

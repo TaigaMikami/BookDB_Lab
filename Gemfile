@@ -6,6 +6,8 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.4'
+gem 'jquery-rails'
+gem 'jquery-turbolinks'
 gem 'bootstrap-sass', '3.3.7'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
@@ -15,6 +17,7 @@ gem 'webpacker'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem 'googlebooks', '~> 0.0.9'
 
 
 group :development, :test do
