@@ -8,6 +8,8 @@
 
 </ul>
 
+<%= will_paginate @books %>
+
 <div class="tana">
   <div class="books">
     <% @books.each do |book| %>
@@ -20,6 +22,9 @@
     <% end %>
   </ul>
 </div>
+
+
+
 
 <script>
 $(document).on('turbolinks:load', function(){

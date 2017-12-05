@@ -2,7 +2,7 @@ class BooksController < ApplicationController
   require 'googlebooks'
 
   def index
-    @books = Book.all
+    @books = Book.paginate(page: params[:page], per_page: 16)
     @books_count = Book.all.count
   end
 
