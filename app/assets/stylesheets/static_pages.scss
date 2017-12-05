@@ -23,7 +23,7 @@ body {
     margin-bottom: 5%;
   }
   width: 100%;
-  height: 500px;
+  height: 100%;
   background-image: url("/back.jpg");
 }
 section {
@@ -97,9 +97,9 @@ footer {
   border-top: 1px solid #eaeaea;
   color: #777;
   a {
-    color: #555;
+    color: #eee;
     &:hover {
-      color: #222;
+      color: #fff;
     }
   }
   small {
