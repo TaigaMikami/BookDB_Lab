@@ -1,13 +1,49 @@
 <% provide(:title, '書籍一覧') %>
 
 <h1>All Books</h1>
+<p>全書籍数:<%= @books_count %></p>
+<input type="from" id="form" placeholder="書籍名を入力してください" style="width: 250px;" />
+
+<ul id="result">
+
+</ul>
+
 <div class="tana">
-  <ul class="books">
+  <div class="books">
     <% @books.each do |book| %>
-      <li>
-        <a href="/books/<%= book.id %>"><img src="<%= book.image_name %>" onerror="/noimage.png"/></a>
-        <p><%= link_to book.title, book %></p>
-      </li>
+      <div class="book">
+        <div class="bookcontainer">
+          <a href="/books/<%= book.id %>"><img src="<%= book.image_name %>" onError="this.onerror=null;this.src='/noimage.png';"/></a>
+          <p><%= link_to book.title, book %></p>
+        </div>
+      </div>
     <% end %>
   </ul>
 </div>
+
+<script>
+$(document).on('turbolinks:load', function(){
+$(document).on('keyup', '#form', function(e){
+  e.preventDefault();
+  var input = $.trim($(this).val());
+
+  $.ajax({
+    url: '/books/search',
+    type: 'GET',
+    data: ('keyword=' + input),
+    processData: false,
+    contentType: false,
+    dataType: 'json'
+  })
+
+  .done(function(data){
+    $('#result').find('a').remove();
+    $('#result').find('br').remove();
+    $(data).each(function(i, book){
+      $('#result').append(`<a href="/books/${book.id}">` + book.title + `</a></br>`)
+    });
+  })
+});
+});
+
+</script>
