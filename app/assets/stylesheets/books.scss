@@ -82,6 +82,7 @@ input {
 .books{
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 100px;
 
   .book{
     position:relative;
@@ -112,6 +113,6 @@ input {
 
 
 /* show */
-.contents{
-  text-align: center;
+.book-propety{
+  width: 150px;
 }

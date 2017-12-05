@@ -17,10 +17,17 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)    # 実装は終わっていないことに注意!
     if @book.save
+      flash[:success] = "Add New Books"
       redirect_to @book
     else
       render 'new'
     end
+  end
+
+  def destroy
+    Book.find(params[:id]).destroy
+    flash[:success] = "Book deleted"
+    redirect_to books_url
   end
 
   def search

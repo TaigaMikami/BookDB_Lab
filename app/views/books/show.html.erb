@@ -4,8 +4,28 @@
 </h1>
 <h1>  <%= @book.title %></h1>
 
-<div class="contents">
-  <p><%= @book.author %></p>
-  <p><%= @book.description %></p>
-  <p><%= @book.publishdate %></p>
-</div>
+<table class="table">
+  <thead class="thead-default">
+    <tr>
+      <th>項目</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="book-propety">著者</th>
+      <td><%= @book.author %></td>
+    </tr>
+    <tr>
+      <th class="book-propety">説明</th>
+      <td><%= @book.description %></td>
+    </tr>
+    <tr>
+      <th class="book-propety">出版日</th>
+      <td><%= @book.publishdate %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to "delete", @book, method: :delete,
+                                data: { confirm: "You sure?" } %>
